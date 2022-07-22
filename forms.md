@@ -1,7 +1,8 @@
 Let's have a look at how forms can be build and handle in symfony : [https://symfony.com/doc/current/forms.html](https://symfony.com/doc/current/forms.html)
 
-There are many ways. But the most efficient would be to have a dedicated form type. Are you lazy ? I guess! We actually already have it if you had create a crud, checkout src/form/operationType.php
-Otherwise you could use the maker bundle in order to create this file!
+There are many ways. But the most efficient would be to have a dedicated form type. Are you lazy ? I guess!
+
+You could use the maker bundle in order to create this file!
 
 ```
 php bin/console make:form OperationType
@@ -9,9 +10,13 @@ php bin/console make:form OperationType
 
 and checkout the newly created file.
 
+We actually already have it if you had create a crud, checkout src/form/operationType.php and comment the createAt property and the type property as well. We won't ask the user to enter it.
+
 ### render the form and handle the form
 
 In Symfony, It's recommended to render and handle the form in the same controller. So we will create a method for this in our OperationController. Remember to import entity and formtype into your controller.
+
+but actually, we already have it : check out the new method in OperationController. We can definetely use that method !
 
 Then in the main view (that we render from HomeController) we will render the form via our method in OperationController.
 

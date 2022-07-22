@@ -5,6 +5,7 @@ Because we are lazy, we will let symfony do it for us.
 
 Checkout the doc about it and follow the steps : [https://symfony.com/doc/current/security.html#the-user](https://symfony.com/doc/current/security.html#the-user)
 
+- delete the previous operations in the db to avoid conflict.
 - create user entity via CLI (I will choose username instead of email for login)
 - our operations need to refer to a user. So we will add a property to the operation model.
 

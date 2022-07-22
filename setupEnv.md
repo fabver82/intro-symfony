@@ -39,6 +39,21 @@ You have just setup your docker-compose file for MySql.
 
 IMPORTANT: modify the port to '3306:3306'. If you don't do it, the port will be random everytime you run docker and you will need to edit the .env file often.
 
+For testing puprose, we will ad phpmyadmin to docker
+Add the folllowing under 'service'
+
+```
+phpmyadmin:
+    depends_on:
+      - database
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      PMA_HOST: database
+```
+
 Symfony need to know how to connect to your database. You need to modify it into the .env file :
 
 - comment the postgresql line if it still here

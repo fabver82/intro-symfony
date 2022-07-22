@@ -26,7 +26,7 @@ Now in our twig file, we will use a for loop
 ```
 {% for operation in operations %}
     <div class="movements__row">
-        <div class="movements__type movements__type--in">{{operation.type}}</div>
+        <div class="movements__type movements__type--{{operation.type}}">{{operation.type}}</div>
         <div class="movements__date">{{operation.createAt|date('Y-m-d')}}</div>
         <div class="movements__subject">{{operation.subject}}</div>
         <div class="movements__value">{{operation.amount}}€</div>
